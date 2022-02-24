@@ -1,1 +1,4 @@
-com\Tienda\Tienda\TiendaApplication.class
+com\tienda\TiendaApplication.class
+com\tienda\controller\IndexController.class
+com\tienda\domain\Cliente.class
+com\tienda\dao\ClienteDao.class
