@@ -24,7 +24,7 @@ public class IndexController {
 
         
        var clientes=clienteDao.findAll();
-        model.addAttribute("clientes",clientes);
+        model.addAttribute("clientes",null);
         return "index";
     }
 
