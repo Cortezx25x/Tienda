@@ -1,45 +1,52 @@
 <!DOCTYPE html>
-<!-- Semana 2 Meta, Semantica del body-->
+<!-- Se actualiza Index para que contenga nuevas etiquetas meta y demas etiquetas para la 
+semántica del body-->
 <html lang="es">
+    <head>
+        <title>Tienda en linea</title>
+        <meta charset="UTF-8">
+        <meta name ="description" content="Esta página contiene etiquetas del tipo HTML5 y luego enlaces o definición de estilos CSS3">
+        <meta name="keywords" content="html5, css3, web, fidélitas">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header id="encabezado"> <!-- Esta etiqueta es para brindar info al browser de que es un encabezado  -->
+            <h1>TechShop</h1>
+        </header>
 
-    <html>
-        <head>
-            <title>Tienda en linea</title>
-            <meta charset="UTF-8">
-            <meta name="description" content="TechnoShop Main Page">
-            <meta name="keyworks" content="html5, TechnoShop, product, compute">
-            <link href="CSS/Estilos.css" rel="stylesheet" type="text/css"/>
+        <nav id="menu"> <!-- Esta etiqueta es para ilustrarle al browser que posiblemente es un Menú -->
+            <a href="ejemplo9.html">Back</a>|
+            <a href="index.html">Home</a>|
+            <a href="ejemplo2.html">Next</a> <br> 
+        </nav>
 
-        </head>
-        <body style="background-color: #ccffcc">
-            <header id="encabezado">
-                <h1>TechnoShop</h1>
-            </header>
+        <aside id="barralateral"> <!-- Indica que es una barra lateral, puede ser a la izquierda o a la derecha, pueden ser varias. -->
+            <h2 style="text-align: center;background-color: black;color:white">Productos más vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit taciti, pretium tristique morbi primis imperdiet scelerisque porta eros, euismod non nibh id suspendisse rhoncus tempus. Dui dignissim curabitur elementum potenti integer venenatis nulla purus imperdiet ut, suspendisse malesuada auctor hac sapien lacinia orci magna et, senectus sodales habitant arcu suscipit eros maecenas scelerisque vitae. Eros potenti aliquet habitant cubilia imperdiet lectus orci enim scelerisque aenean, proin risus velit ligula nibh dui ut class tellus.</p>
+        </aside>
 
-            <nav id="menu"> <!-- Etiqueta que presenta un menu -->
-                <a href="Ejemplo 2.html">Inicio</a>
-                <a href="Ejemplo 9.html">Final</a>
-            </nav>
+        <section id="contenido">
+            <h2>Ejemplo de uso de videos</h2>
+            <article>
+                <header><h3>Trailer de torpedo</h3></header>
+                <figure>
+                    <video width="320" height="240" controls poster="recursos/images/torpedo.jpg">
+              
+                        <source src="recursos/videos/torpedo.mp4" type="video/mp4">
+                        Su navegador no soporta videos del tipo <code>video</code> tag.
+                    </video>
+                       
+                   
+                    <figcaption>Realizada en 2021</figcaption>
+                </figure>
+            </article>  
+            
+        </section>
 
-            <aside id="barralateral"> <!-- barra lateral al final, derecha o izq pueden ser varias -->
-                <h2>Novedades</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </aside>
-            <section id="contenido"> <!-- contenido principal de la pagiina -->
-                <h2>Ejemplo de uso de videos</h2>
-                <article>
-                    <header><h3>Trailer de Torpedo</h3> </header>
-                    <figure>
-                        <video width="320" height="240" controls poster="images/torpedo.jpg"><!--autoplay muted-->
-                            <source src="videos/torpedo.mp4" type="video/mp4">
-                            Su navegador no soporta videos de tipo <code>video</code>
-                        </video>
-                        <figcaption>Realizada en 2020</figcaption>
-                    </figure>
-                </article>
-            </section>
-            <footer id="piepagina">Derechos Reservados &COPY;2022, central:+506 8888-8888,address:Desamparados</footer>
-        </body>
-    </html>
+        <br><!-- Es un enter -->
+        <br> 
+        <footer id="piedepagina">Derechos reservados &COPY; 2022 <address style="display: inline">Tel: 8800-3422</address></footer>
+
+    </body>
+
+</html>
