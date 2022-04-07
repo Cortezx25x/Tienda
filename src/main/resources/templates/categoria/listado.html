@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
@@ -10,35 +11,40 @@
     <body>
         <header th:replace="layout/plantilla :: header" />
         <div class="contenido">
-        <h2 th:text="#{categoria.titulo}">Listado de categorias</h2>
+        <h2>Listado de clientes</h2>
         
         
-        <a th:href="@{/categoria/nuevo}" th:text="#{categoria.nuevo}">Nuevo Categoria</a>
-        <div th:if="${categorias != null and !categorias.empty}">
+        <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
+        <div th:if="${clientes != null and !clientes.empty}">
         <table border="1">
             <thead>
                 <tr>
-                    <th th:text="#{categoria.descripcion}">Descripción</th>
-                    <th th:text="#{categoria.activo}">Activo</th>
-                    <th th:text="#{accion.eliminar}">Eliminar</th>
-                    <th th:text="#{accion.actualizar}">Modificar</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Limite</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="categoria : ${categorias}">
-                    <td th:text="${categoria.descripcion}"></td>
-                    <td th:text="${categoria.activo}"></td>
-                     
-                       <td><a th:href="@{/categoria/eliminar/} + ${categoria.idCategoria}" th:text="#{accion.eliminar}">Eliminar</a></td>
-                       <td><a th:href="@{/categoria/modificar/} + ${categoria.idCategoria}" th:text="#{accion.actualizar}">Modificar</a></td>
+                <tr th:each="cliente : ${clientes}">
+                    <td th:text="${cliente.nombre}"></td>
+                    <td th:text="${cliente.apellidos}"></td>
+                     <td th:text="${cliente.correo}"></td>
+                       <td th:text="${cliente.telefono}"></td>
+                       <td th:text="${cliente.credito.limite}"></td>
+                       <td><a th:href="@{/cliente/eliminar/} + ${cliente.idCliente}">Eliminar</a></td>
+                       <td><a th:href="@{/cliente/modificar/} + ${cliente.idCliente}">Modificar</a></td>
                 </tr>
             </tbody>
         </table>
 
         </div>
   
-         <div th:if="${categorias == null or categorias.empty}">
-             <p th:text="#{categoria.no_mostrar}"> No tenemos una lista de clentes para mostrar...</p>
+         <div th:if="${clientes == null or clientes.empty}">
+        No tenemos una lista de clentes para mostrar...
          </div>
         </div>
         <footer th:replace="layout/plantilla :: footer"/>
