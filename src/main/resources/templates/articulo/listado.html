@@ -2,51 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://wwww.thymeleaf.org" 
       xmlns:sec="http://thymeleaft.org/extras/spring-security">
-    <head>
-        <title>TechShop</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <header th:replace="layout/plantilla :: header" />
-        <div class="contenido">
-        <h2>Listado de articulos</h2>
-        
-        
-        <a th:href="@{/articulo/nuevo}">Nuevo Articulo</a>
-        <div th:if="${articulos != null and !articulos.empty}">
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Existencia</th>
-                    <th>Activo</th>
-                    <th>Limite</th>
-                    <th>Eliminar</th>
-                    <th>Modificar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="articulo : ${articulos}">
-                    <td th:text="${articulo.descripcion}"></td>
-                    <td th:text="${articulo.precio}"></td>
-                     <td th:text="${articulo.existencia}"></td>
-                       <td th:text="${articulo.activo}"></td>
-                      
-                       <td><a th:href="@{/articulo/eliminar/} + ${articulo.idArticulo}">Eliminar</a></td>
-                       <td><a th:href="@{/articulo/modificar/} + ${articulo.idArticulo}">Modificar</a></td>
-                </tr>
-            </tbody>
-        </table>
+<header th:replace="layout/plantilla :: header" />
 
-        </div>
-  
-         <div th:if="${articulos == null or articulos.empty}">
-        No tenemos una lista de clentes para mostrar...
-         </div>
-        </div>
-        <footer th:replace="layout/plantilla :: footer"/>
+<section th:replace="articulo/fragmentosArticulo :: botonesAgregar"/>
+<section th:replace="articulo/fragmentosArticulo :: agregarArticulo"/>
+<section th:replace="articulo/fragmentosArticulo :: listadoArticulos"/>
+
+<footer th:replace="layout/plantilla :: footer" />
     </body>
 </html>
